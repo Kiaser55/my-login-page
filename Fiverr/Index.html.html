@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #Aot{
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+    .container {
+        background:  #F7F8F4;
+        width: 360px;
+        position: absolute;
+        height: 410px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #HxH, #ds {
+        height: 25px;
+        width: 270px;
+        border-radius: 5px;
+        padding-left: 10px;
+        right: 45px;
+        outline: none;
+        bottom: 210px;
+        color: black;
+        font-family: Montserrat, sans-serif;
+        border: 1px solid #d1d3cf;
+        background: white;
+        position: absolute;
+    }
+    #ds {
+        top: 250px;
+    }
+    #xxx {
+        background:  #4B854D;
+        color: white;
+        width: 280px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        top: 300px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #xxx:hover {
+        background: #7BA883;
+        transition: 0.3s;
+    }
+    #chris{
+        position: absolute;
+        top: 350px;
+        font-family: normal;
+        
+    }
+    #sleep{
+        text-decoration: none;
+        color:#4B854D ;
+        position: absolute;
+        top: 373px;
+        left: 240px;
+        font-size: 13px;
+    } 
+    .input-container label {
+        position: absolute;
+        top: 185px;
+        left: 35px;
+        transform: translateY(-50%);
+        background: white;
+        padding-left: 5px;
+        color: black;
+        transition: 1s;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+    }
+    .input-container input:focus + label,
+    .input-container input:not(:placeholder-shown) + label {
+        top: 158px;
+        font-size: 15px;
+    }
+    .input-container1 label {
+        position: absolute;
+        top: 265px;
+        left: 35px;
+        transform: translateY(-50%);
+        background: white;
+        padding-left: 5px;
+        color: black;
+        transition: 1s;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+    }
+    .input-container1 input:focus + label,
+    .input-container1 input:not(:placeholder-shown) + label {
+        top: 235px;
+        font-size: 15px;
+    }
+   #signup-cover-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    z-index: 10;
+    background: #CDE9E5;
+    border-top-left-radius: 100% 80px;
+    border-top-right-radius: 100% 80px;
+    transform: translateY(100%);
+    transition: transform 0.6s ease-in-out;
+    font-family: Montserrat, sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    opacity: 0;
+}
+#signup-cover-btn.show {
+    transform: translateY(0%);
+    pointer-events: auto;
+    opacity: 1;
+}
+.signup-input-container {
+    position: relative;
+    width: 92%;
+    margin-bottom: 12px;
+}
+.signup-input-container input {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #d1d3cf;
+    padding-left: 12px;
+    font-family: Montserrat, sans-serif;
+    background: white;
+    color: black;
+    outline: none;
+}
+.signup-input-container label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4px;
+    color: #888;
+    font-size: 1rem;
+    font-family: Montserrat, sans-serif;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    transition: 0.6s;
+}
+.signup-input-container input:focus + label,
+.signup-input-container input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.85rem;
+    color: #4B854D;
+    background: #fff;
+    padding: 0 4px;
+    mix-blend-mode: multiply;
+    transition: 0.6s;
+}
+#signup-form input[type="submit"] {
+    width: 97%;
+    height: 42px;
+    background: #4B854D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    cursor: pointer; 
+}
+#signup-form input[type="submit"]:hover {
+    background: #7BA883;
+    
+}
+#signup-form button[type="submit"] {
+    width: 97%;
+    height: 42px;
+    background: #4B854D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+#signup-form button[type="submit"]:hover,
+#signup-form button[type="submit"]:focus {
+    background: #7BA883;
+}
+#nav-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: middle;
+    mix-blend-mode: multiply;
+}
+#nav-title {
+    color: #343434;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+nav {
+    width: 100vw;
+    height: 50px;
+    background: #CDE9E5;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+nav .nav-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    margin-right: 15px;
+    vertical-align: middle;
+    mix-blend-mode: multiply;
+}
+nav .nav-title {
+    color: #343434;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 40px;
+}
+nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+nav a {
+    color: #343434;
+    text-decoration: none;
+    margin-right: 20px;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.4s, font-weight 0.4s;
+}
+nav a:active {
+    font-weight: bold;
+    transition: color 0.4s, font-weight 0.4s;
+}
+nav a:active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+nav a:hover {
+    font-weight: bold;
+    transition: color 0.4s, font-weight 0.4s, font-size 0.4s;
+    font-size: 1rem;
+}
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="Image/logo.jpg" alt="Logo" id="nav-logo">
+        <span id="nav-title">Westerfield College</span>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+    <img src="Image/Project.jpg" id ="Aot" alt="Project Image">
+    <div class="container" id="container">
+       <h2 style="color:#343434;position: absolute;text-align:center;top: 65px;font-weight: light;font-family:  Montserrat, sans-serif;" >Welcome back</h2>
+       <h5 style="color: #d1d3cf;position: absolute;text-align: center;top: 100px;font-family: Montserrat, sans-serif ;">Enter your credentials to access your account</h5>
+    <img src="Image/logo.jpg" alt="Green shield with a yellow circle in the upper section and an open book icon in the lower section, representing education and growth" style="width: 50px; height: 50px; position: absolute; top: 25px;mix-blend-mode: multiply;text-align: center;">
+       <a href="Forgot password.html" style="color: #7BA883;position: absolute;top: 220px;font-family: Montserrat, sans-serif;text-decoration: none;font-size: 12px;left:220px;">Forgot Password?</a>
+       <button type="submit" id="xxx">Log in</button>
+       <h6 id="chris">Don't have an acccount?</h6>
+        <a href="#" id="sleep">Sign up</a>
+        <div id="signup-cover-btn">
+            <span style="display:block;margin-top:24px;margin-bottom:24px;font-size:2rem;font-family:Montserrat,sans-serif;font-weight:bold;color:#4B854D;">Sign Up</span>
+            <form id="signup-form" style="width:90%;margin:auto;display:flex;flex-direction:column;align-items:center;gap:10px;background:transparent;border:none;">
+                <div class="signup-input-container">
+                    <input type="email" id="signup-email" placeholder=" " required autocomplete="off">
+                    <label for="signup-email">Email</label>
+                </div>
+                <div class="signup-input-container">
+                    <input type="password" id="signup-password" placeholder=" " required autocomplete="off">
+                    <label for="signup-password">Password</label>
+                </div>
+                <div class="signup-input-container">
+                    <input type="date" id="signup-birthday" placeholder=" " required autocomplete="off">
+                    <label for="signup-birthday">Birthday</label>
+                </div>
+                <button type="submit" style="width:97%;height:42px;background:#4B854D;color:white;border:none;border-radius:5px;font-family:Montserrat,sans-serif;font-weight:bold;cursor:pointer;">Continue</button>
+            </form>
+        </div>
+        <div class="input-container">
+        <input type="email" id="HxH" placeholder="" required>
+        <label for="HxH">Email</label>
+        </div>
+        <div class="input-container1">
+        <input type="password" id="ds" placeholder="" required>
+        <label for="ds">Password</label>
+        </div>
+    </div>   
+    <script>
+    document.getElementById('sleep').addEventListener('click', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('signup-cover-btn');
+        btn.classList.add('show');
+    });
+
+   
+    document.getElementById('signup-cover-btn').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('show');
+        }
+    });
+    </script>
+</body>
+</html>
